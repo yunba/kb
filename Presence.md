@@ -27,7 +27,6 @@ Presence 的实质是，对 [频道](https://github.com/yunba/kb/blob/master/频
 以云巴 [JavaScript SDK Demo](https://github.com/yunba/docs/blob/master/quickstart/demo/Demo_JavaScript.md) 为例。假设频道 news 下有一个名为 defy 的用户，下线后又立刻上线；后有一个名为 cat 的用户订阅了 news 频道，之后又立刻取消订阅。如果通过 `subscribe_presence` 订阅了 news，就可以实时获取到 defy 和 cat 的状态变化。
 打印信息如下：
 
-* get_alias_list：cat defy
 * 来自频道：news/p   消息内容：{"action":"offline","alias":"defy","timestamp":1454321557378}
 * 来自频道：news/p   消息内容：{"action":"online","alias":"defy","timestamp":1454321558995}
 * 来自频道：news/p   消息内容：{"action":"join","alias":"cat","timestamp":1454321577648}
