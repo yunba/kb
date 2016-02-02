@@ -20,8 +20,8 @@ Presence 的实质是，对 [频道](https://github.com/yunba/kb/blob/master/频
 以云巴 [JavaScript SDK Demo](https://github.com/yunba/docs/blob/master/quickstart/demo/Demo_JavaScript.md) 为例。假设频道 news 下有两个用户：defy 和 cat。通过 `subscribe_presence` 订阅了 news 后，可以实时获取到 defy 和 cat 的在线情况。
 打印信息如下：
 
-get_alias_list：cat defy
-来自频道：news/p   消息内容：{"action":"offline","alias":"defy","timestamp":1454321557378}
-来自频道：news/p   消息内容：{"action":"online","alias":"defy","timestamp":1454321558995}
-来自频道：news/p   消息内容：{"action":"offline","alias":"cat","timestamp":1454321577648}
-来自频道：news/p   消息内容：{"action":"online","alias":"cat","timestamp":1454321585416}
+* get_alias_list：cat defy
+* 来自频道：news/p   消息内容：{"action":"offline","alias":"defy","timestamp":1454321557378}
+* 来自频道：news/p   消息内容：{"action":"online","alias":"defy","timestamp":1454321558995}
+* 来自频道：news/p   消息内容：{"action":"offline","alias":"cat","timestamp":1454321577648}
+* 来自频道：news/p   消息内容：{"action":"online","alias":"cat","timestamp":1454321585416}
