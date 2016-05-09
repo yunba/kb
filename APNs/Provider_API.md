@@ -24,8 +24,8 @@ Data complication
 ### Connections
 
 发推送通知的第一步是与相应的 APNs 服务器建立连接：
-开发服务器：api.development.push.apple.com:443
-生产服务器：api.push.apple.com:443
+* 开发服务器：api.development.push.apple.com:443
+* 生产服务器：api.push.apple.com:443
 
 > 
 注意：与 APNs 通信时，你也可以选择 2197 端口。例如，如果你希望 APNs 的信息能跨越防火墙进来，而其他 HTTPS 的信息进不来的话，就可以这么用。
