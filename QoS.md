@@ -1,6 +1,6 @@
 # QoS
 
-云巴兼容标准的 MQTT 3.1 协议，本文介绍一下协议中的 QoS。
+云巴兼容标准的 MQTT 3.1 协议，本文介绍一下协议中的 [QoS](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718099)。
 
 ## QoS 定义
 
