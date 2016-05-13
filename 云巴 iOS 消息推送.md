@@ -16,7 +16,7 @@
 <tr>
   <td><b>App 状态</b></td>
   <td><b>一直 Online</b></td>
-  <td><b>服务端推送了消息后 App 才 Online</b></td>
+  <td><b>服务端推送了消息后，设备才 Online</b></td>
   <td><b>一直 Offline</b></td>
 </tr>
 
