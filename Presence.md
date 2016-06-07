@@ -4,6 +4,12 @@
 
 在 MQTT 协议中，并没有提供用户上、下线等行为的消息通知。于是，我们利用 MQTT 现有的一些特性，设计了 Presence。
 
+![Presence_A1.gif](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_A1.gif)
+
+![Presence_A2.gif](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_A2.gif)
+
+![Presence_A3.gif](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_A3.gif)
+
 ### 2. 什么是 Presence
 
 实时在线（Presence）是云巴提供的实时获取某个频道下所有用户（别名）的上、下线通知以及订阅、取消订阅该频道的通知。
