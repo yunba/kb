@@ -32,10 +32,10 @@ Presence 的实质是，对 [频道](https://github.com/yunba/kb/blob/master/频
 **注**：在调用 Presence API 时，系统自动为用户订阅的 Topic + '/p' 是一个特殊的频道，不会出现在用户实际的订阅列表中。
 
 订阅了某个频道的 Presence 后，可以监听到的通知包括：
-* Online：该频道下所有用户（别名）的上线通知
-* Offline：该频道下所有用户（别名）的下线通知
-* Join：某个用户（别名）订阅了该频道，即该频道下新增了一个用户（别名）
-* Leave：某个用户（别名）取消订阅了该频道，即该频道下一个现有用户（别名）离开了
+* Online：该频道下某个已经设置了别名的用户的“上线通知”
+* Offline：该频道下某个已经设置了别名的用户的“下线通知”
+* Join：某个已经设置了别名的用户订阅该频道的“加入通知”
+* Leave：某个已经设置了别名的用户取消订阅该频道的“离开通知”
 
 ### 2. 相关 API
 下面以 [JavaScript SDK](https://github.com/yunba/yunba-javascript-sdk) 为例，介绍一下与频道相关的 API。
