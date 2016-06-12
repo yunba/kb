@@ -2,18 +2,45 @@
 
 ## 第一步 注册账号
 
-打开[云巴官方网站](http://yunba.io)，注册并登录。
+打开 [云巴官方网站][8]，注册并登录。
 
 ## 第二步 创建新应用
 
-登录后，点击界面右上角“我的应用 --> 创建新应用”，填写应用名称、应用包名等内容。详见 [Portal 的说明文档](https://github.com/yunba/kb/blob/master/Portal.md#%E5%A6%82%E4%BD%95%E5%9C%A8%E4%BA%91%E5%B7%B4-portal-%E4%B8%8A%E5%88%9B%E5%BB%BA%E6%96%B0%E5%BA%94%E7%94%A8)。
+登录后，点击界面右上角 “我的应用 --> 创建新应用”，填写应用名称、应用包名等内容。详见 [Portal 的说明文档][4]。
+
+获得应用的 [AppKey][3]。
 
 ## 第三步 下载 SDK
 
-在云巴官网的[开发者页面](http://yunba.io/developers/)或云巴的 Github 上找到所需平台的 SDK，并下载。
-打开下载的文件会发现，每个平台 SDK 的文件包内都包含一个 Demo，用来演示主要 API 的用法和功能。
-建议从运行 Demo 开始熟悉云巴的 SDK。
+在云巴官网的 [开发者页面][2] 或云巴的 [Github][7] 上找到所需平台的 SDK，并下载。
+
+每种 SDK 的文件包内都包含一个 Demo，用来演示主要 API 的用法和功能。
+建议您从运行 Demo 开始熟悉云巴的 SDK。
 
 ## 第四步 集成 SDK
 
-服务端、客户端分别集成云巴的 SDK。详见官方文档。
+将云巴 SDK 集成到您的应用中（此时会用到第二步中的 [AppKey][3]）。可仿照 Demo 的做法，详见 [Demo 运行的文档][9]。
+
+## 第五步 开始通信
+
+集成 SDK 后，您可以将该应用安装在 A、B、C 三个设备上（当然，您也可以集成到不同平台的应用中，进行跨平台通信），进行实时通信了：
+
+- A 和 B 订阅一个 [频道][5]，C 向该 [频道][5] 发一条消息，那么 A 和 B 都会收到这条消息。
+
+- 给 A 设置 [别名][6] “Alex”，就可以用 B 或 C 向 Alex 发一对一的消息。
+
+- B 和 C 还可以订阅 Alex 的 [在线][1] 状态，实时查看 Alex 的上下线和订阅状态。
+
+- 发消息时，您还可以指定消息送达的 [QoS][11] 等级（至少一次/至多一次/有且仅有一次）。如果客户端当前不在线，云巴还可以为您保存 [离线消息][10]。
+
+[1]: https://github.com/yunba/kb/blob/master/Presence.md
+[2]: http://yunba.io/developers/
+[3]: https://github.com/yunba/kb/blob/master/AppKey.md
+[4]: https://github.com/yunba/kb/blob/master/Portal.md#%E5%A6%82%E4%BD%95%E5%9C%A8%E4%BA%91%E5%B7%B4-portal-%E4%B8%8A%E5%88%9B%E5%BB%BA%E6%96%B0%E5%BA%94%E7%94%A8
+[5]: https://github.com/yunba/kb/blob/master/%E9%A2%91%E9%81%93%E5%92%8C%E5%88%AB%E5%90%8D.md#%E9%A2%91%E9%81%93topic
+[6]: https://github.com/yunba/kb/blob/master/%E9%A2%91%E9%81%93%E5%92%8C%E5%88%AB%E5%90%8D.md#%E5%88%AB%E5%90%8Dalias
+[7]: https://github.com/yunba
+[8]: http://yunba.io
+[9]: https://github.com/yunba/docs/tree/master/quickstart/demo
+[10]: https://github.com/yunba/kb/blob/master/%E4%BA%91%E5%B7%B4%E7%9A%84%E7%A6%BB%E7%BA%BF%E6%B6%88%E6%81%AF.md
+[11]: https://github.com/yunba/kb/blob/master/QoS.md
