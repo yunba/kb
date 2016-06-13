@@ -4,6 +4,20 @@
 
 在 MQTT 协议中，并没有提供用户上、下线等行为的消息通知。于是，我们利用 MQTT 现有的一些特性，设计了 Presence。
 
+下面三组动画展示了 Presence 的具体内容。订阅了某个频道的 Presence 后，可以监听到的通知包括：
+* Online：该频道下某个已经设置了别名的用户的“上线通知”
+* Offline：该频道下某个已经设置了别名的用户的“下线通知”
+* Join：某个已经设置了别名的用户订阅该频道的“加入通知”
+* Leave：某个已经设置了别名的用户取消订阅该频道的“离开通知”
+
+动画说明：
+* 长方框——频道 Room；
+* 头像——用户（设备）；
+* 头像出现在长方框内——订阅了频道；
+* 头像右侧为绿圆点——用户在线；
+* 头像右侧为灰圆点——用户离线；
+* 头像右上方眼睛图标——订阅了频道的在线消息；
+
 ![Presence_A1.gif](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_A1.gif)
 
 ![Presence_A2.gif](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_A2.gif)
@@ -31,11 +45,6 @@ Presence 的实质是，对 [频道](https://github.com/yunba/kb/blob/master/频
 
 **注**：在调用 Presence API 时，系统自动为用户订阅的 Topic + '/p' 是一个特殊的频道，不会出现在用户实际的订阅列表中。
 
-订阅了某个频道的 Presence 后，可以监听到的通知包括：
-* Online：该频道下某个已经设置了别名的用户的“上线通知”
-* Offline：该频道下某个已经设置了别名的用户的“下线通知”
-* Join：某个已经设置了别名的用户订阅该频道的“加入通知”
-* Leave：某个已经设置了别名的用户取消订阅该频道的“离开通知”
 
 ### 2. 相关 API
 下面以 [JavaScript SDK](https://github.com/yunba/yunba-javascript-sdk) 为例，介绍一下与频道相关的 API。
