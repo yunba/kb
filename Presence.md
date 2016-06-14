@@ -39,10 +39,10 @@
 >上例中，UID 1005 虽然订阅了 Room 频道，但未订阅 Room 的 Presence，因而不会收到 Presence 消息；
 
 * Presence 消息只对设置了别名的客户端有效
->上例中，UID 1003 未设置别名，因而当他进出房间或上下线时不会有 Presence 消息发出；
+>上例中，UID 1003 和 1004 未设置别名，因而当他们进出房间或上下线时不会有 Presence 消息发出；
 
 * Presence 消息的订阅者本身并不要求有别名
->上例中，别名为 Alex 的客户端和未设置别名的 UID 1003 都可以收到 Presence 消息；
+>上例中，别名为 Alex 的客户端和未设置别名的 UID 1003 或 1004 都可以收到 Presence 消息；
 
 ### 4. Presence 的原理
 
