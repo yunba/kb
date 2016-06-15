@@ -38,7 +38,12 @@
 * 头像 **绿色/灰色** 表示 **在线/离线**
 * 头像 **有/无 眼睛图标** 表示 **订阅/未订阅 Room 的 Presence 消息**
 
-![Presence_0.gif](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_0.gif)
+**Join/Leave 通知：**
+![Presence_join_leave.png](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_join_leave.png)
+
+**Online/Offline 通知：**
+![Presence_online_offline.png](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_online_offline.png)
+
 
 #### 例二
 
