@@ -25,9 +25,34 @@
 
 ### 3. Presence 举例
 
-假设有一个频道名为 Room；<br>有五个客户端，UID 分别为 1001，1002，1003，1004 和 1005；<br>其中，1001 已经设置了别名 Alex，1002 设置了别名 Bob，另三个客户端未设置别名。
 
-我们用**进/出 Room** 来表示 **订阅/取消订阅 Room**，用 **绿色/灰色** 表示 **在线/离线**，用 **小眼睛图标** 表示 **订阅了 Room 的 Presence 消息**。
+
+#### 例一
+
+请先看一个最简单的场景，初步了解 “Join/Leave/Online/Offline” 四种消息的含义：
+
+**描述**
+* 有一个频道，名为 Room
+* 有两个客户端，别名分别为 Alex 和 Bob
+* 头像 **在 Room 内/外** 表示 **订阅/未订阅 Room**
+* 头像 **绿色/灰色** 表示 **在线/离线**
+* 头像 **有/无 眼睛图标** 表示 **订阅/未订阅 Room 的 Presence 消息**
+
+![Presence_0.gif](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_0.gif)
+
+#### 例二
+
+前文有提到，Presence 消息仅对设置了别名的客户端有效。<br>
+那么，客户端是否设置 “别名” 对 Presence 消息的收发具体有怎样的影响呢？请看下面两个例子： 
+
+**描述**
+* 有一个频道，名为 Room
+* 有五个客户端，内部 UID 分别为 1001，1002，1003，1004 和 1005
+* UID 1001 和 1002 已经分别设置了别名 Alex 和 Bob
+* UID 1003、1004 和 1005 未设置别名
+* 头像 **在 Room 内/外** 表示 **订阅/未订阅 Room**
+* 头像 **绿色/灰色** 表示 **在线/离线**
+* 头像 **有/无 眼睛图标** 表示 **订阅/未订阅 Room 的 Presence 消息**
 
 ![Presence_B1.gif](https://raw.githubusercontent.com/yunba/docs/master/image/for_kb/Presence_B1.gif)
 
@@ -35,13 +60,13 @@
 
 通过这个例子，可以看出：
 
-* 订阅了 Presence 才能收到 Presence 的消息
+* **订阅了 Presence 才能收到 Presence 的消息**
 >上例中，UID 1005 虽然订阅了 Room 频道，但未订阅 Room 的 Presence，因而不会收到 Presence 消息；
 
-* Presence 消息只对设置了别名的客户端有效
+* **Presence 消息只对设置了别名的客户端有效**
 >上例中，UID 1003 和 1004 未设置别名，因而当他们进出房间或上下线时不会有 Presence 消息发出；
 
-* Presence 消息的订阅者本身并不要求有别名
+* **Presence 消息的订阅者本身并不要求有别名**
 >上例中，别名为 Alex 的客户端和未设置别名的 UID 1003 或 1004 都可以收到 Presence 消息；
 
 ### 4. Presence 的原理
