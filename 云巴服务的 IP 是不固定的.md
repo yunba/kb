@@ -1,4 +1,4 @@
-##云巴服务的 IP 是不固定的
+# 云巴服务的 IP 是不固定的
 
 客户端在与 MQTT broker 进行长连接之前会先请求云巴 ticket 服务，
 ticket 服务会返回一个当前可用的 broker IP，

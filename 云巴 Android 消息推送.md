@@ -1,4 +1,4 @@
-## 云巴 Android 消息推送
+# 云巴 Android 消息推送
 
 如下图所示，客户端集成了云巴的 Android SDK，服务端可通过云巴的 SDK 或使用 RESTful API，向 Android 客户端发消息。
 
@@ -10,7 +10,7 @@ Android SDK 会启动一个后台的 Service，创建并保持到云巴服务器
 
 * 确保消息的送达
 
-云巴 SDK 支持 [离线消息](https://github.com/yunba/kb/blob/master/云巴的离线消息.md) 的功能，可保证消息送达客户端。
+云巴 SDK 支持 [离线消息](http://yunba.io/docs2/yunba_offline_message) 的功能，可保证消息送达客户端。
 
 在推送消息时，如果客户端当前不在线，消息将暂存在云巴服务器上（多达 50 条，长达 15 天）。
 当客户端上线并成功连接到云巴的服务器后，服务器会把离线消息推送给该客户端。客户端成功接收后，服务器才会删除保存的离线消息。

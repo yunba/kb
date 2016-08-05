@@ -6,13 +6,13 @@
 
 ### 2. 什么是 Presence
 
-实时在线（Presence）是云巴提供的实时获取某个频道下所有用户（[别名][1]）的上、下线通知以及订阅、取消订阅该频道的通知。
+实时在线（Presence）是云巴提供的实时获取某个频道下所有用户（[别名][6]）的上、下线通知以及订阅、取消订阅该频道的通知。
 
 订阅了某个频道的 Presence 后，可以监听到的通知包括：
 * Online/Offline：该频道下<u>某个已经设置了别名的用户</u>的“上/下线通知”。
 * Join/Leave：某个<u>已经设置了别名的用户</u>订阅该频道的“加入/离开通知”。
 
-从这个定义可以看出，**使用 Presence，只能监听已经设置了 [别名][1] 的客户端，未设置 [别名][1] 的客户端不会被监听。**
+从这个定义可以看出，**使用 Presence，只能监听已经设置了 [别名][6] 的客户端，未设置 [别名][6] 的客户端不会被监听。**
 
 
 >Q: 为什么客户端必须设置别名呢？
@@ -20,7 +20,7 @@
 >A: 由于 Presence 消息针对的是客户端的订阅动态和在线状态，因此，消息必须有一个客户端主体。
 在云巴系统内部，会为每一个连接云巴的客户端生成一个唯一的标识符，即 UID。
 由于这个 UID 是一串无意义的字符串，不便于对外公开和使用，因而，我们设计了“别名”的概念来取代 UID。
-用户可以通过为客户端设置不同的 “[别名][1]” 来唯一标识客户端。
+用户可以通过为客户端设置不同的 “[别名][6]” 来唯一标识客户端。
 
 
 ### 3. Presence 举例
@@ -47,7 +47,8 @@
 
 #### 例二
 
-前文有提到，Presence 消息仅对设置了 别名 的客户端有效。<br>
+前文有提到，Presence 消息仅对设置了 别名 的客户端有效。
+
 那么，客户端是否设置 别名 对 Presence 消息的收发具体有怎样的影响呢？请看下面两个例子： 
 
 **描述**
@@ -76,7 +77,7 @@
 
 ### 4. Presence 的原理
 
-Presence 的实质是，对 [频道](https://github.com/yunba/kb/blob/master/频道和别名.md#频道topic) 下所有用户 [别名](https://github.com/yunba/kb/blob/master/频道和别名.md#别名alias) 的状态的订阅。成功订阅后，Topic 下的任何用户别名的状态一旦发生变化，都会向 Topic + '/p' 频道发送消息。
+Presence 的实质是，对 [频道][5] 下所有用户 [别名][6] 的状态的订阅。成功订阅后，Topic 下的任何用户别名的状态一旦发生变化，都会向 Topic + '/p' 频道发送消息。
 
 例如，某用户（客户端）通过调用 `subscribe_presence("news")` 来监控 news 频道下的 Presence 消息。
 调用成功后，云巴系统会自动为该客户端订阅一个名为 news/p 的频道，并将 news 频道的所有的 Presence 消息发给 news/p，让用户可以实时掌控该频道所有的 Presence 消息。
@@ -89,7 +90,7 @@ Presence 的实质是，对 [频道](https://github.com/yunba/kb/blob/master/频
 * [`subscribe_presence`](http://yunba.io/docs2/Javascript_SDK/#subscribe_presence) 用来监听某个频道下所有用户的别名状态的变化。
 * [`unsubscribe_presence`](http://yunba.io/docs2/Javascript_SDK/#unsubscribe_presence) 用来取消对某频道下用户别名状态变化的监听。
 
-以云巴 [JavaScript SDK Demo](https://github.com/yunba/docs/blob/master/quickstart/demo/Demo_JavaScript.md) 为例。假设频道 news 下有一个名为 defy 的用户，下线后又立刻上线；后有一个名为 cat 的用户订阅了 news 频道，之后又立刻取消订阅。如果通过 `subscribe_presence` 订阅了 news，就可以实时获取到 defy 和 cat 的状态变化。
+以云巴 [JavaScript SDK Demo][2] 为例。假设频道 news 下有一个名为 defy 的用户，下线后又立刻上线；后有一个名为 cat 的用户订阅了 news 频道，之后又立刻取消订阅。如果通过 `subscribe_presence` 订阅了 news，就可以实时获取到 defy 和 cat 的状态变化。
 打印信息如下：
 
 * 来自频道：news/p   消息内容：{"action":"offline","alias":"defy","timestamp":1454321557378}
@@ -97,4 +98,7 @@ Presence 的实质是，对 [频道](https://github.com/yunba/kb/blob/master/频
 * 来自频道：news/p   消息内容：{"action":"join","alias":"cat","timestamp":1454321577648}
 * 来自频道：news/p   消息内容：{"action":"leave","alias":"cat","timestamp":1454321585416}
 
-[1]:https://github.com/yunba/kb/blob/master/频道和别名.md#别名alias
+
+[2]: http://yunba.io/docs2/js_demo
+[5]: http://yunba.io/docs2/topic_and_alias#%E9%A2%91%E9%81%93topic
+[6]: http://yunba.io/docs2/topic_and_alias#%E5%88%AB%E5%90%8Dalias
